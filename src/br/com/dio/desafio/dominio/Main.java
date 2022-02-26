@@ -20,10 +20,44 @@ public class Main {
         mentoria.setData(LocalDate.now());
 
 
-        System.out.println(curso1);
+       /* System.out.println(curso1);
         System.out.println(curso2);
         System.out.println(mentoria);
+        */
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp GFT");
+        bootcamp.setDescricao("Insert description here");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devMario = new Dev();
+        devMario.setNome("Mario");
+        devMario.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos: " + devMario.getConteudosInscritos());
+        devMario.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos inscritos: " + devMario.getConteudosInscritos());
+        System.out.println("Conteúdos concluídos: " + devMario.getConteudosConcluidos());
+        System.out.println("XP: " + devMario.calcularTotalXp());
+
+        System.out.println("=========");
+
+        Dev devJosefina = new Dev();
+        devJosefina.setNome("Josefina");
+        devJosefina.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos: " + devJosefina.getConteudosInscritos());
+        devJosefina.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos inscritos: " + devJosefina.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos: " + devJosefina.getConteudosConcluidos());
+        System.out.println("Calcular XP: " + devJosefina.calcularTotalXp());
+
+        System.out.println("=========");
+
+        }
 
 
     }
-}
+
